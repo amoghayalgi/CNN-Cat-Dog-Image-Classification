@@ -1,2 +1,57 @@
-# Cat-Dog-Image-Classification
-A deep‑learning image classification project built for the Dogs vs. Cats Kaggle competition, using transfer learning to accurately distinguish between cat and dog images. The pipeline includes preprocessing, model fine‑tuning, and evaluation across multiple modern CNN architectures.
+Dogs vs. Cats Image Classification (CNN + Transfer Learning)
+Overview
+This project builds a high performance image classifier for the Kaggle Dogs vs. Cats Redux competition using Convolutional Neural Networks (CNNs) and transfer learning.
+The goal was to design an efficient training pipeline, experiment with modern architectures, and optimize for low log loss and high validation accuracy.
+The final model achieves 95%+ validation accuracy and a log loss of 0.05, placing it on par with the top ~20% of Kaggle submissions.
+________________________________________
+Key Features
+•	Transfer Learning with EfficientNetB0/B3 and ResNet50V2
+•	Data Augmentation including flips, color jitter, rotation, and zoom
+•	Label smoothing and log-loss optimization
+•	Batch size experimentation (32, 64) for stability and speed
+•	Prediction clipping to reduce overconfident outputs
+•	Clean, modular training pipeline for reproducibility
+________________________________________
+Technical Stack & Concepts
+Deep Learning Framework
+•	TensorFlow / Keras
+•	Pretrained ImageNet weights for transfer learning
+Core Concepts Used
+•	CNN Feature Extraction
+•	Transfer Learning & Fine Tuning
+•	Data Augmentation to reduce overfitting
+•	Batch Normalization & Regularization
+Model Variants Explored
+From the uploaded document, the following configurations were tested:
+“Augmentation Models tried: EfficientNetB0, EfficientNetB3, ResNet50V2… Best LogLoss 0.034–0.11 depending on augmentation and label smoothing.”
+•	Exploration Phase
+o	EfficientNetB0
+o	EfficientNetB3
+o	ResNet50V2
+o	Full augmentation (flip, color jitter)
+•	Optimized Phase
+o	ResNet50V2 + rotation + zoom
+o	Batch size = 32 or 64
+________________________________________
+Results
+Final Model Performance
+•	Validation Accuracy: 95%+
+•	Log Loss: 0.05
+•	Kaggle Standing: Comparable to top 20% of leaderboard submissions
+Why It Performs Well
+•	ResNet architectures provide strong feature extraction
+•	Augmentation reduces overfitting
+•	Label smoothing improves generalization
+•	Prediction clipping stabilizes log-loss
+________________________________________
+Repository Structure
+├── data/                # Training & validation images
+├── notebooks/           # Experimentation notebooks
+├── models/              # Saved model weights
+├── src/
+│   ├── dataloader.py    # Augmentation & preprocessing
+│   ├── train.py         # Training loop
+│   ├── evaluate.py      # Metrics & predictions
+│   └── utils.py
+└── README.md
+
