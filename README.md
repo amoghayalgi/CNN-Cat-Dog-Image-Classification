@@ -37,8 +37,6 @@ The final model achieves 95%+ validation accuracy and a log loss of 0.05, placin
 
 From the uploaded document, the following configurations were tested:  
 
-> “Augmentation Models tried: EfficientNetB0, EfficientNetB3, ResNet50V2… Best LogLoss 0.034–0.11 depending on augmentation and label smoothing.”
-
 ### Exploration Phase
 - EfficientNetB0  
 - EfficientNetB3  
